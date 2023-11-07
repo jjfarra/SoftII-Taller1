@@ -20,6 +20,11 @@
 				 <artifactId>maven-project-info-reports-plugin</artifactId>
 				 <version>3.0.0</version>
 		 	</plugin>
+		 	<plugin>
+				<groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-pmd-plugin</artifactId> 
+				<version>3.13.0</version>
+     		</plugin> 
 	 	</plugins>
 	</build>
 	<reporting>
@@ -32,6 +37,16 @@
 				 	<configLocation>JobyFarra_checks.xml</configLocation>
 				</configuration>
 			</plugin>
+			<plugin> 
+			    <groupId>org.apache.maven.plugins</groupId> 
+			    <artifactId>maven-pmd-plugin</artifactId> 
+			    <version>3.13.0</version> 
+			    <configuration> 
+			        <rulesets> 
+			    		<ruleset>JobyFarra_ruleset.xml</ruleset> 
+					</rulesets> 
+			    </configuration> 
+			</plugin> 
 		 </plugins>
 	</reporting>
 </project>

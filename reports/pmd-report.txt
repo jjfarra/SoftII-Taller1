@@ -1,0 +1,2 @@
+src/main/java/VacationPackageCostEstimator.java:38:	UnusedLocalVariable:	UnusedLocalVariable: Avoid unused local variables such as 'additionalAddOns'.
+src/main/java/VacationPackageCostEstimator.java:47:	UnusedAssignment:	UnusedAssignment: The value assigned to variable 'additionalAddOns' is never used

@@ -2,6 +2,7 @@
 // All rights reserved
 import java.util.Scanner;
 
+@SuppressWarnings("PMD.UseUtilityClass")
 public class VacationPackageCostEstimator {
 //CHECKSTYLE:OFF
 /**
@@ -10,6 +11,7 @@ public class VacationPackageCostEstimator {
  * @param args Arguments
 */
 public static void main(String[] args) {
+
 	Scanner scanner = new Scanner(System.in);
 
 	System.out.print("Enter the destination of the vacation: ");
@@ -21,18 +23,37 @@ public static void main(String[] args) {
 	System.out.print("Enter the duration of the vacation in days: ");
 	int days = scanner.nextInt();
 
-	scanner.close();
+    System.out.print("Would you like to add the All-Inclusive Package? (yes/no): ");
+    String addAllInclusive = scanner.next();
+    
+    System.out.print("Would you like to add the Adventure Activities Package? (yes/no): ");
+    String addAdventurePackage = scanner.next();
+    
+    System.out.print("Would you like to add the Spa and Wellness Package? (yes/no): ");
+    String addSpaPackage = scanner.next();
+	
+    scanner.close();
 	int baseCostTrip = 1000;
 	int additionalCostCity = 0;
-
-
-	if (destination.equalsIgnoreCase("Paris")) {
+	int additionalAddOns = 0;
+	
+	if ("yes".equalsIgnoreCase(addAllInclusive)) {
+		additionalAddOns += 200 * travelers;
+	}
+	if ("yes".equalsIgnoreCase(addAdventurePackage)) {
+		additionalAddOns += 150 * travelers;
+	}
+	if ("yes".equalsIgnoreCase(addSpaPackage)) {
+		additionalAddOns += 100 * travelers;
+	}
+	
+	if ("Paris".equalsIgnoreCase(destination)) {
 		additionalCostCity = 500;
-	} else if (destination.equalsIgnoreCase("New York City")) {
+	} else if ("New York City".equalsIgnoreCase(destination)) {
 		additionalCostCity = 600;
 	}
 
-	int total = baseCostTrip + additionalCostCity;
+	int total = baseCostTrip + additionalCostCity + additionalAddOns;
 
 	if (travelers > 4 && travelers < 10) {
 		total -= total * 0.1;
